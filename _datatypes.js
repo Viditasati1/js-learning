@@ -20,3 +20,5 @@ let isloggedIn=false
 
 console.log(typeof undefined)
 console.log(typeof null)
+
+// remember type of null is an object
