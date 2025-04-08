@@ -38,3 +38,13 @@ console.log(convtostr);
 console.log(typeof convtostr);
 
 // bool,int everything gets cont to string
+
+
+
+// **************** Operations *****************
+
+console.log("1"+2+9+6); // when string part appears all next to it will act as string and before it this is all normal numbers
+console.log(4+7+99+"2"); 
+
+console.log(++true) // invalid
+console.log(true++) // invalid;
