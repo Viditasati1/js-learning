@@ -60,3 +60,22 @@ users[1].email
 
 
 
+// destructuring the objects
+
+const course={
+    courseInstructor:"vidit",
+       price:500,
+       coursename:"js ki pathshala"
+   }
+   
+   // suppose if we will use this courseInstructor variable again and again 
+   // so it will be so lengthy to use it again and again we will destructure it
+   
+   
+   course.courseInstructor // initial way of accesing
+   
+   const{courseInstructor:teach}=course
+   
+   
+   console.log(teach);
+   
