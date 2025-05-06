@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code | Dom</title>
+</head>
+<body>
+
+    <ul class="language">
+
+     <li>Javascript</li>
+     <li>Typescript</li>
+     <li>Django</li>
+     <li>Flask</li>
+
+    </ul>
+    
+</body>
+
+<script>
+const add=document.querySelector(".language");
+  console.log(add);
+   const colours=["red","blue","orange","yellow"]
+   const childs=["vidit","vikas","vaibhav","gaurav"]
+//   for (let i = 0; i < add.children.length; i++) {
+//     const element = add.children[i];
+//     console.log(element.innerHTML)
+//     element.style.backgroundColor=colours[i];
+//   }
+// add.forEach((item,i)=>{
+//   item.style.backgroundColor=colours[i];
+// })
+
+for (let i = 0; i < childs.length; i++) {
+    const element = document.createElement("li");
+    element.textContent=childs[i];
+    add.appendChild(element)
+    
+}
+
+</script>
+</html>   
+
+
+
+
+
+
