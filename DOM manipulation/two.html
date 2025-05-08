@@ -22,9 +22,24 @@
 
 <script>
     const par=document.querySelector('.parent')
-    console.log(par)
-    console.log(par.children);
-    console.log(par.children[3].innerHTML);
+    const naya=document.querySelectorAll('.day')
+    const cl=document.getElementsByClassName("parent")
+    console.log(par.childNodes)
+    // console.log(par)
+    console.log(naya)
+    const colors=["red","black","green","orange"];
+    // console.log(par.children);
+    naya.forEach(function (elem) {
+        elem.style.fontSize = "20px";
+        elem.style.fontWeight = "bold";
+    })
+    for (let i = 0; i < par.children.length; i++) {
+        const element = par.children[i];
+        element.style.backgroundColor="blue";
+        element.style.color=colors[i]
+        console.log(element)
+    }
+
 </script>
 
 

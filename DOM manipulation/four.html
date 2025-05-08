@@ -2,48 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chai aur Code | Dom</title>
+    <title>Chai aur code | DOM</title>
 </head>
-<body>
-
+<body style="background-color: #212121; color: #fff;">
     <ul class="language">
-
-     <li>Javascript</li>
-     <li>Typescript</li>
-     <li>Django</li>
-     <li>Flask</li>
-
+        <li>Javascript</li>
     </ul>
-    
 </body>
-
 <script>
-const add=document.querySelector(".language");
-  console.log(add);
-   const colours=["red","blue","orange","yellow"]
-   const childs=["vidit","vikas","vaibhav","gaurav"]
-//   for (let i = 0; i < add.children.length; i++) {
-//     const element = add.children[i];
-//     console.log(element.innerHTML)
-//     element.style.backgroundColor=colours[i];
-//   }
-// add.forEach((item,i)=>{
-//   item.style.backgroundColor=colours[i];
-// })
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
 
-for (let i = 0; i < childs.length; i++) {
-    const element = document.createElement("li");
-    element.textContent=childs[i];
-    add.appendChild(element)
-    
-}
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    //Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    //secondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
 
 </script>
-</html>   
-
-
-
+</html>
 
 
 
