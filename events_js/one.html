@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+   
+   // method 1
+   // directly adding onclick with inline css attribute
+
+
+//  method 2 (using directly onclick)
+document.getElementById("images").addEventListener("click",function(e){
+    //  alert(`Your owl layerx is ${e.layerX}`) 
+    // console.log(e)
+    // alert(` the current target is ${e.currentTarget}`);
+    // alert(`the x movement tracked is ${e.movementX}`)
+    // console.log("clicked inside the ul");
+    
+},false)    
+
+// method 3 (using attribute via addeventlistener)
+document.getElementById("owl").addEventListener("click",function(e){
+    //  alert(`Your owl layerx is ${e.layerX}`) 
+    // console.log("clicked inside the owl");
+    // e.stopPropagation();
+         
+},false)    // this is our bubbling event (from bottom to up as owl also comes under images but 
+// firstly owl will be clicked then it will go to images) this is enabled in false mode only
+
+
+// in case you want the capturing mode set every event mode to true and it will come from top to bottom
+
+
+// in bubbling method if you want to stop the propagation from bottom to top at any stage then after that stage you can use stop propagation method
+
+
+// this is the example where we can stop the default behaviour of an attribute by applying the prevent default method
+document.querySelector("#google").addEventListener("click",function(e){ 
+// e.preventDefault();   
+// e.stopPropagation(); 
+})
+
+document.querySelector("#images").addEventListener("click",function(e){
+    // console.log(e.target.parentNode);
+    if(e.target.tagName==="IMG"){
+         let removeit=e.target.parentNode;
+        removeit.remove();
+    }
+    
+})
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+<h1>Chai aur Code</h1>
+<button id="Stop">STOP</button>
+
+
+
+
+
+    
+</body>
+<script>
+
+
+let ct=1;
+
+const inpu=function(){
+    console.log(`timeout func count is ${ct}`);
+    ct++;
+    totalamt+=3;
+}
+
+const tostop=setInterval(inpu,3000)
+
+let totalamt=0;
+// const changeme=setTimeout(changetext,2000);
+
+document.querySelector("#Stop").addEventListener("click",function(){
+    clearTimeout(tostop);
+    console.log(totalamt);
+})   
+
+</script>
+</html>

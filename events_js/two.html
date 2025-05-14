@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+<h1>Chai aur Code</h1>
+<button id="Stop">STOP</button>
+
+
+
+
+
+    
+</body>
+<script>
+
+
+
+const inpu=function(){
+    console.log("Pehla timeout func")
+}
+
+const changetext=function(){
+document.querySelector("h1").innerHTML=`best javascript series`;
+}
+
+const changeme=setTimeout(changetext,2000);
+
+document.querySelector("#Stop").addEventListener("click",function(){
+    clearTimeout(changeme);
+    console.log("Its Stopped");
+})   
+
+
+
+
+
+
+</script>
+</html>
